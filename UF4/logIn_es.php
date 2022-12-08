@@ -23,7 +23,7 @@ if (isset($_POST['botonEntrar'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Acceso Usuarios</title>
-    <link rel="stylesheet" href="../css/logIn_css.css">
+    <link rel="stylesheet" href="css/logIn_css.css">
     <noscript>
         Para utilizar las funcionalidades completas de este sitio es necesario tener
         JavaScript habilitado. Aquí están las
