@@ -1,5 +1,8 @@
 <?php 
 
+//Estamos utilizando CRUD (Create, Read, Update, Delete) para las operaciones de la base de datos.
+
+
 //Requerimos el archivo db.php para poder usar las funciones de la base de datos
 require 'ctrlActividades.php';
 
@@ -11,16 +14,21 @@ $method = $_SERVER['REQUEST_METHOD']; //Guardamos el tipo de solicitud en la var
 
 switch ($method) {
     case 'GET':
-        listActivities();
+        listActivities(); //Si la solicitud es GET, ejecutamos la función listActivities
         break;
     case 'POST':
-        $actividad = json_decode(file_get_contents('php://input')); //Recibimos los datos de la actividad en formato JSON y los decodificamos con json_decode
-        createActivity($actividad); //Llamamos a la función createActivity y le pasamos como parámetro los datos de la actividad
+        createActivity(); //Si la solicitud es POST, ejecutamos la función createActivity
+        break;
+    case 'PUT':
+        updateActivity(); //Si la solicitud es PUT, ejecutamos la función updateActivity
+        break;
+
+    case 'DELETE':
+        deleteActivity(); //Si la solicitud es DELETE, ejecutamos la función deleteActivity    
         break;
     
-    default:
-        # code...
-        break;
+   
 }
+
 
 ?>

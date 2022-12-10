@@ -2,7 +2,7 @@
 try {
 
     mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT); //Aseguramos que nos muestre los errores de MySQLi
-    $conexion = new mysqli("localhost", "root", "", "ifpdbuf4pruebas"); //Creamos la conexión con la base de datos
+    $conexion = new mysqli("localhost", "root", "", "ifpdb"); //Creamos la conexión con la base de datos
 
 } catch (mysqli_sql_exception $e) {
 
