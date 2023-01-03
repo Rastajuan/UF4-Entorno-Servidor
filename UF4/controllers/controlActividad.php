@@ -87,7 +87,7 @@ function updateActivity($actividad)
 
 function deleteActivity($actividad)
 {
-    $endpoint = 'http://' . $_SERVER['HTTP_HOST'] . '/UF4_API/index.php' . $actividad->id;  //Definimos la url del endpoint, en este caso es la misma que la del index de la api. Añaadimos el id de la actividad que queremos eliminar al final de la url para que la api sepa que actividad queremos eliminar
+    $endpoint = 'http://' . $_SERVER['HTTP_HOST'] . '/UF4_API/index.php' . $actividad->id;  //Definimos la url del endpoint, en este caso es la misma que la del index de la api. Añadimos el id de la actividad que queremos eliminar al final de la url para que la api sepa que actividad queremos eliminar
 
     $curl = curl_init();
 
