@@ -65,7 +65,7 @@ function updateActivity($actividad)
 
     $json = json_encode($actividad); //Codifica un valor de PHP a formato JSON. json_encode() toma una variable de PHP y la convierte a una representación JSON. Devuelve un string con la representación JSON de value si tiene éxito o FALSE si falla.
 
-    $curl = curl_init();
+    $curl = curl_init(); //Inicializa una sesión cURL
 
     curl_setopt($curl, CURLOPT_URL, $endpoint); //Establece una opción para una transferencia cURL. CURLOPT_URL: La URL a la que se enviará la solicitud.
 
