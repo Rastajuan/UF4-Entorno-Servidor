@@ -77,8 +77,8 @@ function updateActivity()
 
     $sqlQuery = "UPDATE actividades SET titulo = ?, ciudad = ?, tipo = ?, fecha = ?, precio = ?, usuario = ? WHERE id = ?";
 
-    $resultado = $conexion->prepare($sqlQuery);
-    $resultado->bind_param(
+    $resultado = $conexion->prepare($sqlQuery); //Ejecutamos la consulta sql y guardamos el resultado en la variable $resultado.
+    $resultado->bind_param( // En la consulta sql, los valores que recibimos de la actividad los sustituimos por signos de interrogación. Los valores de la actividad los pasamos como parámetros a la función bind_param de la variable $resultado. bind_param recibe como primer parámetro los tipos de datos de los valores que vamos a pasar como parámetros. Los tipos de datos que podemos pasar son: s (string), i (integer), d (double), b (blob). Después de los tipos de datos, pasamos los valores de la actividad como parámetros. El número de parámetros que pasamos debe coincidir con el número de signos de interrogación que hay en la consulta sql.
         'ssssdsi',
         $actividad["titulo"],
         $actividad["ciudad"],
@@ -89,7 +89,7 @@ function updateActivity()
         $id
     );
 
-    $resultado->execute();
+    $resultado->execute(); //Ejecutamos la consulta sql
     if ($resultado->num_rows > 0) { //Si el número de filas de la consulta sql es mayor que 0, es decir, si hay datos en la tabla actividades de la base de datos, se ejecuta el bucle while
 
         header("HTTP/1.1 200 OK"); //Si todo ha ido bien, devolvemos el código de estado 200 OK
